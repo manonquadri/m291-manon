@@ -1,1 +1,11 @@
-# m291-manon
+# M291 — Manon
+Médiamaticienne en 3ème année 
+## Ce que je veux apprendre
+Faire des jolis design de site 
+## M291 · Fiche d’atelier · e1-1 — Mon repo
+- m'aider pour comprendre les consignes/objectfis 
+- Apprendre à faire de beaux design 
+## Mon projet (idée en une phrase)
+Je ne sais pas mais en lien avec la musique 
+## Comment me trouver
+- GitHub : manonquadri
