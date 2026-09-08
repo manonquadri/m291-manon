@@ -9,3 +9,5 @@ Faire des jolis design de site
 Je ne sais pas mais en lien avec la musique 
 ## Comment me trouver
 - GitHub : manonquadri
+
+_Repo cloné et ouvert dans VS Code._
