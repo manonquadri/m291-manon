@@ -6,7 +6,7 @@ Faire des jolis design de site
 - m'aider pour comprendre les consignes/objectfis 
 - Apprendre à faire de beaux design 
 ## Mon projet (idée en une phrase)
-Je ne sais pas mais en lien avec la musique 
+Une app conseil de livre 
 ## Comment me trouver
 - GitHub : manonquadri
 
