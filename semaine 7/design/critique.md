@@ -67,5 +67,7 @@ C'est le meilleur feedback des trois : le score « 94 % match », la barre de pr
 Les blocs noirs sont réservés partout à l'explication (« Pourquoi », résumé), ce qui crée une règle visuelle claire. L'orange vif est utilisé avec parcimonie, seulement pour le score et l'onglet actif.
 
 
-
+## Conclusion
+ 
+ La maquette répondant le plus au critères est la B, mais il faudrait peut-être y ajouter certaines parties de la C.
  
