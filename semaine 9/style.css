@@ -1,0 +1,82 @@
+
+:root {
+ 
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #1d1b34;            /* 16,7:1 sur blanc */
+  --color-text-muted: #5e5b73;      /* 6,5:1 sur blanc */
+  --color-primary: #1d1b34;
+  --color-primary-hover: #3a3760;
+  --font-sans: "Nunito Sans", system-ui, -apple-system, sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --radius-card: 24px;
+
+  /* --- Ajouts propres à Bookmatch --- */
+
+  /* Couleurs */
+  --color-accent: #f7b587;          /* pêche : onglet actif, bouton critères, titres « Pourquoi ? » */
+  --color-accent-hover: #f39f66;
+  --color-surface-soft: #fde6d2;    /* pêche clair : chips, tags, piste de la barre de match */
+  --color-surface-dark: #1d1b34;    /* en-tête, barre de navigation, blocs « Pourquoi ? » */
+  --color-text-on-dark: #ffffff;    /* 16,7:1 sur bleu nuit */
+  --color-text-on-dark-muted: #d9d6ea; /* 11,7:1 sur bleu nuit */
+  --color-border: #1d1b34;          /* contour des cartes */
+
+  /* Typographie */
+  --font-serif: "Fraunces", Georgia, serif; /* titres, avec font-variation-settings: "SOFT" 100 */
+  --text-xs: 13px;    /* minimum absolu : badges, pages, tags */
+  --text-sm: 14px;    /* textes secondaires, « Pourquoi ? », boutons */
+  --text-md: 15px;    /* recherche, corps de texte */
+  --text-lg: 18px;    /* titres de cartes */
+  --text-xl: 23px;    /* titre de la fiche */
+  --text-2xl: 27px;   /* titre de page */
+  --text-3xl: 30px;   /* « Bonsoir ! » */
+
+  /* Espacement supplémentaire */
+  --space-5: 32px;
+
+  /* Arrondis */
+  --radius-tag: 10px;
+  --radius-cover: 14px;
+  --radius-panel: 28px;   /* en-tête, barre de navigation */
+  --radius-pill: 999px;   /* chips, boutons, recherche */
+
+  /* Accessibilité */
+  --touch-target: 44px;   /* taille minimale de toute zone cliquable */
+  --border-width: 1.5px;
+  --focus-ring: 0 0 0 3px #f7b587, 0 0 0 5px #1d1b34;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+.cartes-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.carte {
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+}
+
+.carte .auteur {
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .cartes-grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
