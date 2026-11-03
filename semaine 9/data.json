@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "titre": "Les Heures salées",
+    "auteur": "Anouk Verlaine",
+    "genre": "roman",
+    "nbPages": 248,
+    "ambiance": "mélancolique",
+    "public": "adulte",
+    "resume": "Une gardienne de phare sur le Léman reçoit chaque soir les lettres d'un inconnu qui semble connaître son passé.",
+    "dejaLu": false
+  },
+  {
+    "id": 2,
+    "titre": "Le Jardin d’hiver",
+    "auteur": "Léon Favre",
+    "genre": "policier",
+    "nbPages": 312,
+    "ambiance": "haletant",
+    "public": "adulte",
+    "resume": "À Lausanne, un jardinier découvre un indice enterré dans la serre d'une villa où personne n'est entré depuis vingt ans.",
+    "dejaLu": true
+  },
+  {
+    "id": 3,
+    "titre": "Sous la glycine",
+    "auteur": "Clara Bonvin",
+    "genre": "romance",
+    "nbPages": 196,
+    "ambiance": "feel-good",
+    "public": "jeune adulte",
+    "resume": "Deux étudiantes rivales doivent tenir ensemble un petit café de Montreux pendant tout un été.",
+    "dejaLu": false
+  },
+  {
+    "id": 4,
+    "titre": "La Dernière Écluse",
+    "auteur": "Malo Dufresne",
+    "genre": "science-fiction",
+    "nbPages": 420,
+    "ambiance": "mystérieux",
+    "public": "adulte",
+    "resume": "En 2091, le Rhône s'arrête de couler et une ingénieure part seule vers la source pour comprendre pourquoi.",
+    "dejaLu": false
+  },
+  {
+    "id": 5,
+    "titre": "Les Renards du Jura",
+    "auteur": "Inès Rochat",
+    "genre": "fantasy",
+    "nbPages": 356,
+    "ambiance": "réconfortant",
+    "public": "ado",
+    "resume": "Une adolescente découvre que les renards de sa forêt parlent et qu'ils ont besoin d'elle avant le premier hiver.",
+    "dejaLu": true
+  }
+]
