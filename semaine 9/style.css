@@ -1,6 +1,7 @@
+/* Polices de la maquette (piste B) */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,600,100;1,9..144,600,100&family=Nunito+Sans:wght@400;600;700&display=swap");
 
 :root {
- 
   --color-bg: #ffffff;
   --color-surface: #ffffff;
   --color-text: #1d1b34;            /* 16,7:1 sur blanc */
@@ -21,19 +22,21 @@
   --color-accent-hover: #f39f66;
   --color-surface-soft: #fde6d2;    /* pêche clair : chips, tags, piste de la barre de match */
   --color-surface-dark: #1d1b34;    /* en-tête, barre de navigation, blocs « Pourquoi ? » */
+  --color-surface-violet: #3a3760;  /* 3e couleur de couverture */
+  --color-surface-lilac: #f1f0f7;   /* couverture claire */
   --color-text-on-dark: #ffffff;    /* 16,7:1 sur bleu nuit */
   --color-text-on-dark-muted: #d9d6ea; /* 11,7:1 sur bleu nuit */
   --color-border: #1d1b34;          /* contour des cartes */
 
   /* Typographie */
-  --font-serif: "Fraunces", Georgia, serif; /* titres, avec font-variation-settings: "SOFT" 100 */
-  --text-xs: 13px;    /* minimum absolu : badges, pages, tags */
-  --text-sm: 14px;    /* textes secondaires, « Pourquoi ? », boutons */
-  --text-md: 15px;    /* recherche, corps de texte */
-  --text-lg: 18px;    /* titres de cartes */
-  --text-xl: 23px;    /* titre de la fiche */
-  --text-2xl: 27px;   /* titre de page */
-  --text-3xl: 30px;   /* « Bonsoir ! » */
+  --font-serif: "Fraunces", Georgia, serif;
+  --text-xs: 13px;
+  --text-sm: 14px;
+  --text-md: 15px;
+  --text-lg: 18px;
+  --text-xl: 23px;
+  --text-2xl: 27px;
+  --text-3xl: 30px;
 
   /* Espacement supplémentaire */
   --space-5: 32px;
@@ -41,13 +44,19 @@
   /* Arrondis */
   --radius-tag: 10px;
   --radius-cover: 14px;
-  --radius-panel: 28px;   /* en-tête, barre de navigation */
-  --radius-pill: 999px;   /* chips, boutons, recherche */
+  --radius-panel: 28px;
+  --radius-pill: 999px;
 
   /* Accessibilité */
-  --touch-target: 44px;   /* taille minimale de toute zone cliquable */
+  --touch-target: 44px;
   --border-width: 1.5px;
   --focus-ring: 0 0 0 3px #f7b587, 0 0 0 5px #1d1b34;
+}
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -55,28 +64,161 @@ body {
   color: var(--color-text);
   margin: 0;
   font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-variation-settings: "SOFT" 100;
+  font-weight: 600;
+  margin: 0;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ---------- En-tête bleu nuit ---------- */
+
+header {
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+  border-radius: 0 0 var(--radius-panel) var(--radius-panel);
+  padding: var(--space-5) var(--space-4) var(--space-4);
+}
+
+header h1 {
+  font-size: var(--text-3xl);
+  line-height: 1.1;
+}
+
+/* La nav est vide pour l'instant (filtres en semaine 12) */
+header nav:empty {
+  display: none;
+}
+
+/* ---------- Grille de livres ---------- */
+
+main {
+  flex: 1;
 }
 
 .cartes-grille {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-3);
-  padding: var(--space-3);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3) 12px;
+  padding: var(--space-4) var(--space-4) var(--space-5);
 }
 
 .carte {
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-card);
-  padding: var(--space-4);
+  padding: var(--space-2) var(--space-2) var(--space-3);
+  display: grid;
+  grid-template-rows: auto auto;
+  min-width: 0;
+}
+
+/* Couverture dessinée en CSS : bloc + cercle pêche */
+.carte::before {
+  content: "";
+  grid-row: 1;
+  grid-column: 1;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-cover);
+  background:
+    radial-gradient(circle at 85% 85%, var(--color-accent) 0 32%, transparent 33%),
+    var(--color-surface-dark);
+}
+
+/* Le titre se pose sur la couverture */
+.carte h3 {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: start;
+  padding: var(--space-3) 12px 0;
+  font-style: italic;
+  font-size: var(--text-md);
+  line-height: 1.15;
+  color: var(--color-text-on-dark);
+  position: relative;
+  overflow-wrap: break-word;
 }
 
 .carte .auteur {
-  color: var(--color-text-muted);
+  grid-row: 2;
+  margin: var(--space-2) var(--space-1) 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text);
 }
 
+/* Variantes de couvertures, comme sur la maquette */
+.carte:nth-child(3n + 2)::before {
+  background:
+    radial-gradient(circle at 50% 100%, var(--color-surface-soft) 0 40%, transparent 41%),
+    var(--color-accent);
+}
+
+.carte:nth-child(3n + 2) h3 {
+  color: var(--color-text);
+}
+
+.carte:nth-child(3n + 3)::before {
+  background:
+    radial-gradient(circle at 95% 62%, var(--color-surface-dark) 0 26%, transparent 27%),
+    var(--color-surface-lilac);
+}
+
+.carte:nth-child(3n + 3) h3 {
+  color: var(--color-text);
+}
+
+/* ---------- Pied de page bleu nuit ---------- */
+
+footer {
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark-muted);
+  border-radius: var(--radius-panel) var(--radius-panel) 0 0;
+  padding: var(--space-4);
+  text-align: center;
+  font-size: var(--text-sm);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- Écrans plus larges ---------- */
+
 @media (min-width: 768px) {
+  header,
   .cartes-grille {
-    grid-template-columns: repeat(2, 1fr);
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+  }
+
+  .cartes-grille {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
+
+  .carte h3 {
+    font-size: var(--text-lg);
+  }
+}
+
+@media (min-width: 1100px) {
+  .cartes-grille {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
